@@ -1,4 +1,4 @@
-The service was used to improve the quality of work in the studio. It consisted of three subservices.
+The service was used to improve the quality of work in the studio. It consisted of three subservices. Service was deployed on Debian Virtual Machine along with SQL Database.
 
 1. JiraService is created to help Jira users in their daily duties in Jira. Many automations are created, which are triggered by appropriately set webhooks.
 Few of automation examples:
