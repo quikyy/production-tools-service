@@ -1,6 +1,4 @@
 package com.productiontools.services.impl;
-
-import com.google.common.collect.Lists;
 import com.productiontools.entities.jira.*;
 import com.productiontools.enums.*;
 import com.productiontools.repositories.*;
@@ -135,7 +133,7 @@ public class JiraServiceImpl implements JiraService {
 		JSONArray jiraUsersPayload = jiraRequestHandler.getJiraUsers();
 
 		JSONArray sharedTeamPersonsPayload = jiraJsonParser.getJiraSharedTeamsJSON("persons");
-		JSONArray sharedTeamTeamsPayload = jiraJsonParser.getJiraSharedTeamsJSON("teams");;
+		JSONArray sharedTeamTeamsPayload = jiraJsonParser.getJiraSharedTeamsJSON("teams");
 
 		if(Objects.nonNull(jiraUsersPayload)){
 			for(int i = 0; i < jiraUsersPayload.length(); i++){
@@ -241,12 +239,9 @@ public class JiraServiceImpl implements JiraService {
 				}
 
 				jiraComponentRepository.saveAll(jiraComponents);
-
 			}
 
 		}
-
-
 	}
 
 
@@ -394,7 +389,6 @@ public class JiraServiceImpl implements JiraService {
 			int boardId = Integer.parseInt(sprintPayload.get(0).get("boardId").asText());
 
 			if(boardId == frameworkBoardId) {
-				//TODO - zrobić to lepiej i dla każdego projektu :)
 				return;
 			}
 
